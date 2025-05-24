@@ -45,4 +45,5 @@ public class CargoService {
                 .map(CargoMapper::toDTO)
                 .collect(Collectors.toList());
     }
+
 }

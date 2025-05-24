@@ -9,4 +9,5 @@ import java.util.UUID;
 @Repository
 public interface CargoRepository extends JpaRepository<CargoEntity, UUID> {
     Optional<CargoEntity> findByNome(String nome);
+
 }
