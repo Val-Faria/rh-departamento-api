@@ -96,7 +96,7 @@ rh-departamento-api/
 
 ### Passos:
 
-```bash
+bash
 # Clone o repositório
 git clone https://github.com/seu-usuario/nome-do-repositorio.git
 cd nome-do-repositorio
@@ -129,6 +129,8 @@ Injeção de Dependência
 
  Aplicar padrões mais avançados, como Builder e Observer
 
- Criar um ambiente de produção com Docker ou Heroku
+ Criar um ambiente de produção com Railway
+ Link para a documentação em desenvolvimento no Swagger: http://localhost:8080/swagger-ui/index.html#/
+ ´´´´
 
 
