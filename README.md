@@ -1,16 +1,16 @@
 # springboot-design-patterns
 
-# 🏢 RH System - Spring Boot API
+# 🏢 rh-departamento-api
 
-Projeto desenvolvido durante o **Bootcamp Java Bradesco - DIO**, com foco na aplicação prática de **Padrões de Projeto** e construção de uma **API RESTful de Recursos Humanos (RH)**.
+Projeto desenvolvido durante o Bootcamp Java Bradesco - DIO, com foco na aplicação prática de Padrões de Projeto e construção de uma API RESTful de Recursos Humanos (RH).
 
 ---
 
 ## 🚀 Sobre o Projeto
 
-Este sistema simula um módulo de **Gestão de Recursos Humanos**, permitindo o **cadastro e gerenciamento de cargos, departamentos e salários**, utilizando tecnologias modernas com o ecossistema **Spring** e **Java**.
+Este sistema simula um módulo de Gestão de Recursos Humanos, permitindo o cadastro e gerenciamento de cargos, departamentos e salários, utilizando tecnologias modernas com o ecossistema Spring e Java.
 
-A aplicação explora os principais **padrões de projeto**, como `Repository`, `Service`, `Controller`, além de boas práticas como a separação de camadas, injeção de dependência e persistência com JPA.
+A aplicação explora os principais padrões de projeto, como `Repository`, `Service`, `Controller`, além de boas práticas como a separação de camadas, injeção de dependência e persistência com JPA.
 
 > 💡 **Nota**: Este projeto está em constante evolução. Pretendo aprofundar meus estudos em Java e Spring, e futuramente adicionar novas funcionalidades e camadas de complexidade, como:
 > - Autenticação e autorização com Spring Security
@@ -36,18 +36,36 @@ A aplicação explora os principais **padrões de projeto**, como `Repository`, 
 
 ## 📁 Estrutura do Projeto
 
-src/
-└── main/
-├── java/
-│ └── com/seuprojeto/rh/
-│ ├── controller/ # Controllers da API
-│ ├── model/ # Entidades JPA
-│ ├── repository/ # Interfaces Repository
-│ ├── service/ # Regras de negócio
-│ └── RhApplication.java
-└── resources/
-├── application.properties
-└── ...
+rh-departamento-api/
+├── .idea/                         # Configurações do IntelliJ
+├── .mvn/                          # Configurações do Maven Wrapper
+├── src/
+│   └── main/
+│       ├── java/
+│       │   └── com.desafio.padrao.de.projeto.rh_departamento_api/
+│       │       ├── controller/
+│       │       │   ├── cargo/
+│       │       │   │   ├── CargoController.java
+│       │       │   │   ├── CargoDTORequest.java
+│       │       │   │   └── CargoDTOResponse.java
+│       │       │   └── departamento/
+│       │       │       ├── DepartamentoController.java
+│       │       │       ├── DepartamentoDTORequest.java
+│       │       │       └── DepartamentoDTOResponse.java
+│       │       ├── core/
+│       │       │   ├── cargo/
+│       │       │   └── departamento/
+│       │       └── RhDepartamentoApiApplication.java
+│       └── resources/
+│           └── application.properties  # Configurações da aplicação
+├── src/test/                          # Testes automatizados (em desenvolvimento)
+├── target/                            # Diretório de build (gerado pelo Maven)
+├── .gitignore
+├── .gitattributes
+├── HELP.md
+├── mvnw
+└── pom.xml                            # Arquivo de dependências Maven
+
 
 
 ---
@@ -69,6 +87,12 @@ src/
 - Java 17+
 - PostgreSQL
 - Maven
+- Spring Boot
+- Spring Data JPA
+- Jakarta Persistence
+- Lombok
+- Mapper
+- Postman (para tstes de API)
 
 ### Passos:
 
@@ -89,6 +113,8 @@ spring.datasource.password=sua_senha
 Repository Pattern
 
 Service Layer Pattern
+
+Mapper
 
 DTOs 
 
