@@ -1,9 +1,11 @@
-package com.desafio.padrao.de.projeto.rh_departamento_api.core.cargo;
+package com.desafio.padrao.de.projeto.rh_departamento_api.application.service;
 
 import com.desafio.padrao.de.projeto.rh_departamento_api.controller.cargo.CargoDTORequest;
 import com.desafio.padrao.de.projeto.rh_departamento_api.controller.cargo.CargoDTOResponse;
-import com.desafio.padrao.de.projeto.rh_departamento_api.core.departamento.DepartamentoEntity;
-import com.desafio.padrao.de.projeto.rh_departamento_api.core.departamento.DepartamentoService;
+import com.desafio.padrao.de.projeto.rh_departamento_api.infrastructure.persistence.mapper.CargoMapper;
+import com.desafio.padrao.de.projeto.rh_departamento_api.infrastructure.persistence.repository.CargoRepository;
+import com.desafio.padrao.de.projeto.rh_departamento_api.infrastructure.persistence.entity.DepartamentoEntity;
+import com.desafio.padrao.de.projeto.rh_departamento_api.infrastructure.persistence.entity.CargoEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

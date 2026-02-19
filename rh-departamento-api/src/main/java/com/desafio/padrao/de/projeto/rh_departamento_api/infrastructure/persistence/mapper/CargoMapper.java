@@ -1,9 +1,9 @@
-package com.desafio.padrao.de.projeto.rh_departamento_api.core.cargo;
+package com.desafio.padrao.de.projeto.rh_departamento_api.infrastructure.persistence.mapper;
 
 import com.desafio.padrao.de.projeto.rh_departamento_api.controller.cargo.CargoDTORequest;
 import com.desafio.padrao.de.projeto.rh_departamento_api.controller.cargo.CargoDTOResponse;
-import com.desafio.padrao.de.projeto.rh_departamento_api.core.departamento.DepartamentoEntity;
-import com.desafio.padrao.de.projeto.rh_departamento_api.core.departamento.DepartamentoMapper;
+import com.desafio.padrao.de.projeto.rh_departamento_api.infrastructure.persistence.entity.DepartamentoEntity;
+import com.desafio.padrao.de.projeto.rh_departamento_api.infrastructure.persistence.entity.CargoEntity;
 
 public class CargoMapper {
 

@@ -1,7 +1,8 @@
-package com.desafio.padrao.de.projeto.rh_departamento_api.core.departamento;
+package com.desafio.padrao.de.projeto.rh_departamento_api.infrastructure.persistence.mapper;
 
 import com.desafio.padrao.de.projeto.rh_departamento_api.controller.departamento.DepartamentoDTORequest;
 import com.desafio.padrao.de.projeto.rh_departamento_api.controller.departamento.DepartamentoDTOResponse;
+import com.desafio.padrao.de.projeto.rh_departamento_api.infrastructure.persistence.entity.DepartamentoEntity;
 
 public class DepartamentoMapper {
 

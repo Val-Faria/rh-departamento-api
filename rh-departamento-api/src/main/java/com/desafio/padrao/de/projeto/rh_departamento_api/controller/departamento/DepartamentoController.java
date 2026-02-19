@@ -1,6 +1,6 @@
 package com.desafio.padrao.de.projeto.rh_departamento_api.controller.departamento;
 
-import com.desafio.padrao.de.projeto.rh_departamento_api.core.departamento.DepartamentoService;
+import com.desafio.padrao.de.projeto.rh_departamento_api.application.service.DepartamentoService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

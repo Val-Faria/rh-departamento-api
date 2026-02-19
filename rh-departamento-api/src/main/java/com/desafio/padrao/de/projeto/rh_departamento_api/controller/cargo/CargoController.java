@@ -1,7 +1,10 @@
 package com.desafio.padrao.de.projeto.rh_departamento_api.controller.cargo;
 
-import com.desafio.padrao.de.projeto.rh_departamento_api.core.cargo.CargoService;
-import com.desafio.padrao.de.projeto.rh_departamento_api.core.departamento.DepartamentoService;
+import com.desafio.padrao.de.projeto.rh_departamento_api.application.service.CargoService;
+import com.desafio.padrao.de.projeto.rh_departamento_api.application.service.DepartamentoService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -11,6 +14,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/cargo")
+@Tag(name = "Cargos", description = "Operações relacionadas aos cargos")
 public class CargoController {
 
     @Autowired
@@ -18,7 +22,8 @@ public class CargoController {
     @Autowired
     private DepartamentoService departamentoService;
 
-
+    @Operation(summary = "Listar todos os cargos")
+    @ApiResponse(responseCode = "200", description = "Lista de cargos retornada com sucesso")
     @GetMapping
     public List<CargoDTOResponse> listar() {
         return cargoService.buscarTodos();

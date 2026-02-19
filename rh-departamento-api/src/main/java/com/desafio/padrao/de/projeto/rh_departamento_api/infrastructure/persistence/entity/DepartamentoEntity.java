@@ -1,4 +1,4 @@
-package com.desafio.padrao.de.projeto.rh_departamento_api.core.departamento;
+package com.desafio.padrao.de.projeto.rh_departamento_api.infrastructure.persistence.entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
