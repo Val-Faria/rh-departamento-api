@@ -1,138 +1,129 @@
-# springboot-design-patterns
+# 🏢 RH Departamento API
 
-# 🏢 rh-departamento-api
+API REST desenvolvida com **Java + Spring Boot** para gerenciamento de recursos humanos, aplicando **Design Patterns,
+Clean Architecture e autenticação com JWT**.
 
-Projeto desenvolvido durante o Bootcamp Java Bradesco - DIO, com foco na aplicação prática de Padrões de Projeto e construção de uma API RESTful de Recursos Humanos (RH).
-
----
-
-## 🚀 Sobre o Projeto
-
-Este sistema simula um módulo de Gestão de Recursos Humanos, permitindo o cadastro e gerenciamento de cargos, departamentos e salários, utilizando tecnologias modernas com o ecossistema Spring e Java.
-
-A aplicação explora os principais padrões de projeto, como `Repository`, `Service`, `Controller`, além de boas práticas como a separação de camadas, injeção de dependência e persistência com JPA.
-
-> 💡 **Nota**: Este projeto está em constante evolução. Pretendo aprofundar meus estudos em Java e Spring, e futuramente adicionar novas funcionalidades e camadas de complexidade, como:
-> - Autenticação e autorização com Spring Security
-> - Versionamento de API
-> - Testes automatizados com JUnit e Mockito
-> - Integração com serviços externos
-> - Padrões avançados como Builder, Observer e Domain Events
+Projeto criado durante o **Bootcamp Java Bradesco (DIO)** e evoluído com práticas modernas de desenvolvimento backend.
 
 ---
 
-## 🛠️ Tecnologias Utilizadas
+## 🚀 Tecnologias
 
-- ✅ **Java 17+**
-- ✅ **Spring Boot**
-- ✅ **Spring Data JPA**
-- ✅ **Jakarta Persistence**
-- ✅ **PostgreSQL**
-- ✅ **Lombok**
-- ✅ **Maven**
-- ✅ **Postman** (para testes da API)
-
----
-
-## 📁 Estrutura do Projeto
-
-rh-departamento-api/
-├── .idea/                         # Configurações do IntelliJ
-├── .mvn/                          # Configurações do Maven Wrapper
-├── src/
-│   └── main/
-│       ├── java/
-│       │   └── com.desafio.padrao.de.projeto.rh_departamento_api/
-│       │       ├── controller/
-│       │       │   ├── cargo/
-│       │       │   │   ├── CargoController.java
-│       │       │   │   ├── CargoDTORequest.java
-│       │       │   │   └── CargoDTOResponse.java
-│       │       │   └── departamento/
-│       │       │       ├── DepartamentoController.java
-│       │       │       ├── DepartamentoDTORequest.java
-│       │       │       └── DepartamentoDTOResponse.java
-│       │       ├── core/
-│       │       │   ├── cargo/
-│       │       │   └── departamento/
-│       │       └── RhDepartamentoApiApplication.java
-│       └── resources/
-│           └── application.properties  # Configurações da aplicação
-├── src/test/                          # Testes automatizados (em desenvolvimento)
-├── target/                            # Diretório de build (gerado pelo Maven)
-├── .gitignore
-├── .gitattributes
-├── HELP.md
-├── mvnw
-└── pom.xml                            # Arquivo de dependências Maven
-
-
+* **Java 17**
+* **Spring Boot**
+* **Spring Security**
+* **JWT Authentication**
+* **Spring Data JPA / Hibernate**
+* **PostgreSQL**
+* **Lombok**
+* **Maven**
+* **Swagger / OpenAPI**
+* **Postman**
 
 ---
 
-## 🧠 Funcionalidades
+## 🧠 Principais Funcionalidades
 
-- ✅ Cadastro de **Departamentos**
-- ✅ Cadastro de **Cargos**
-- ✅ Cadastro de **Funcionários** com salário
-- ✅ Relacionamentos entre entidades
-- ✅ Operações CRUD com persistência em **PostgreSQL**
-- ✅ Testes de endpoints com **Postman**
+✔ CRUD de **Departamentos, Cargos e Funcionários**
+✔ Persistência com **PostgreSQL**
+✔ **Arquitetura em camadas (Controller, Service, Repository)**
+✔ Autenticação segura com **Spring Security + JWT**
+✔ Senhas criptografadas com **BCrypt**
+✔ Documentação da API com **Swagger**
 
 ---
 
-## 🔧 Como Executar
+## 🔐 Autenticação
 
-### Pré-requisitos:
-- Java 17+
-- PostgreSQL
-- Maven
-- Spring Boot
-- Spring Data JPA
-- Jakarta Persistence
-- Lombok
-- Mapper
-- Postman (para tstes de API)
+A API utiliza **JWT (JSON Web Token)**.
 
-### Passos:
+Login:
 
-bash
-# Clone o repositório
-git clone https://github.com/seu-usuario/nome-do-repositorio.git
-cd nome-do-repositorio
+```http
+POST /api/auth/login
+```
 
-# Configure o banco no application.properties
-spring.datasource.url=jdbc:postgresql://localhost:5432/nomedobanco
-spring.datasource.username=seu_usuario
-spring.datasource.password=sua_senha
+Request:
 
-# Execute a aplicação
+```json
+{
+  "email": "usuario@email.com",
+  "password": "123456"
+}
+```
+
+Resposta:
+
+```json
+{
+  "token": "jwt_token"
+}
+```
+
+Uso nas requisições protegidas:
+
+```
+Authorization: Bearer {token}
+```
+
+---
+
+## 🏗 Arquitetura
+
+O projeto segue princípios de **Clean Architecture**, separando responsabilidades:
+
+```
+controller → service → repository → database
+```
+
+Estrutura principal:
+
+```
+src/main/java
+ ├── controller
+ ├── core
+ ├── infrastructure
+ │   └── security (JWT, filters, adapters)
+ └── config
+```
+
+---
+
+## ▶ Como Executar
+
+1️⃣ Clonar repositório
+
+```
+git clone https://github.com/Val-Faria/rh-departamento-api
+```
+
+2️⃣ Configurar banco PostgreSQL no `application.properties`
+
+3️⃣ Executar aplicação
+
+```
 ./mvnw spring-boot:run
+```
 
-📌 Padrões de Projeto Aplicados
-Repository Pattern
+---
 
-Service Layer Pattern
+## 📚 Documentação da API
 
-Mapper
+Swagger disponível em:
 
-DTOs 
+```
+http://localhost:8080/swagger-ui/index.html
+```
 
-Injeção de Dependência
+---
 
-🎯 Próximos Passos
- Implementar autenticação com Spring Security
+## 🎯 Próximos Passos
 
- Adicionar validações personalizadas
+* Implementar **registro de usuários**
+* Controle de **roles (ADMIN / USER)**
+* **Testes automatizados**
+* Deploy da API
 
- Criar testes automatizados com JUnit e Mockito
+---
 
- Aplicar padrões mais avançados, como Builder e Observer
-
- Criar um ambiente de produção com Railway
- 
- Link para a documentação em desenvolvimento no Swagger: http://localhost:8080/swagger-ui/index.html#/
- 
- ´´´´
-
-
+👨‍💻 **Projeto focado em prática de arquitetura backend com Spring Boot e segurança com JWT.**

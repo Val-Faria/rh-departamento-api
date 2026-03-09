@@ -1,0 +1,3 @@
+jwt:
+  secret: dGhpcy1pcy1hLXN1cGVyLXNlY3JldC1rZXktZm9yLWp3dC10ZXN0
+  expiration: 86400000
